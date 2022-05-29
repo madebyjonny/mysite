@@ -20,7 +20,7 @@ export default function Index() {
             <span>2021</span> Showreel
           </h1>
           <p>
-            Checout and get a taste of my work from last year in my latest
+            Checkout and get a taste of my work from last year in my latest
             showreel.
           </p>
           <a
