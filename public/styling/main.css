@@ -1,0 +1,97 @@
+body,html {
+    height: 100%;
+}
+
+body {
+    margin:0;
+    background: #000;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: proxima-nova, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    line-height: 100%;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h1 span {
+    font-size: 1.2rem;
+    display: block;
+    line-height: 100%;
+}
+
+p {
+    line-height: 140%;
+    letter-spacing: 0.005rem;
+}
+
+
+.main-navigation {
+    padding: 1rem 10%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index:1;
+}
+
+.logo {
+    width: 100px;
+}
+
+/* banner s*/
+.banner {
+    position:relative;
+    width: 100%;
+    height: 100%;
+    display:flex;
+    align-items: center;
+    padding: 0 10%;
+    box-sizing: border-box;
+}
+
+.banner p {
+    text-shadow: 2px 2px 4px rgb(0 0 0 / 45%);
+    font-size: 1.2rem;
+}
+
+.banner h1 {
+    text-shadow: 2px 2px 4px rgb(0 0 0 / 45%);
+    font-size: 4.5rem;
+}
+
+.banner .detail {
+    position:relative;
+    z-index: 1;
+    max-width: 550px;
+}
+
+.banner .overlay {
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(117,117,117,0) 7%, rgba(255,255,255,0) 48%, rgba(20,20,20,0) 93%, rgba(0,0,0,1) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.banner .video {
+    position: absolute;
+    z-index: 0;
+    top:0;
+    left:0;
+    aspect-ratio: 9 / 16;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
