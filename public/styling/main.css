@@ -25,6 +25,7 @@ h1 {
 }
 
 h1 span {
+    font-weight: 400;
     font-size: 1.2rem;
     display: block;
     line-height: 100%;
@@ -33,6 +34,39 @@ h1 span {
 p {
     line-height: 140%;
     letter-spacing: 0.005rem;
+    margin: 0.5rem 0;
+}
+
+.button {
+    width: auto;
+    height: 40px;
+    font-weight: 400;
+    font-family: proxima-nova, sans-serif;
+    letter-spacing: 0.007rem;
+    text-transform: uppercase;
+    display: inline-flex;
+    border: 1px solid #fff;
+    color: #fff;
+    box-sizing: border-box;
+    padding-left: 1rem;
+    align-items: center;
+    flex-direction: row;
+    text-decoration: none;
+    justify-content: space-between;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.button .icon{
+    height: 100%;
+    width: 40px;
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid #fff;
 }
 
 
@@ -62,6 +96,7 @@ p {
 .banner p {
     text-shadow: 2px 2px 4px rgb(0 0 0 / 45%);
     font-size: 1.2rem;
+    margin-bottom: 1rem;
 }
 
 .banner h1 {
@@ -94,4 +129,25 @@ p {
     width: 100%;
     object-fit: cover;
     opacity: 0.5;
+}
+
+@media(max-width: 600px) {
+
+    .main-navigation {
+        padding: 1rem 5%;
+    }
+
+    .banner {
+        padding: 0 5%;
+        align-items: flex-end;
+        padding-bottom: 3rem;
+    }
+
+    .banner h1 {
+        font-size: 3rem;
+    }
+
+    .banner p {
+        font-size: 1rem;
+    }
 }

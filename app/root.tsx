@@ -20,6 +20,10 @@ export default function App() {
       <head>
         <Meta />
         <Links />
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/styling/main.css" />
         <link rel="stylesheet" href="https://use.typekit.net/wjh4vef.css" />
