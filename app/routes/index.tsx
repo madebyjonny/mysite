@@ -9,6 +9,7 @@ export default function Index() {
           className="video"
           muted
           autoPlay
+          loop
           src="https://madebyjonny.fra1.digitaloceanspaces.com/showreel.mp4"
           poster="/images/reel-poster.jpg"
           playsInline
