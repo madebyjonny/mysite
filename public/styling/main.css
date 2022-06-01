@@ -11,7 +11,7 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6 {
-    font-family: proxima-nova, sans-serif;
+    font-family: dharma-gothic-e, sans-serif;
     font-weight: 700;
     font-style: normal;
     text-transform: uppercase;
@@ -40,6 +40,7 @@ p {
 .button {
     width: auto;
     height: 40px;
+    backdrop-filter: blur(100px);
     font-weight: 400;
     font-family: proxima-nova, sans-serif;
     letter-spacing: 0.007rem;
@@ -55,24 +56,52 @@ p {
     justify-content: space-between;
 }
 
-.button:hover {
-    cursor: pointer;
+.play-button {
+    height: 50px;
+    padding: 0 2rem;
+    border-radius: 1000px;
+    backdrop-filter: blur(10px);
+    font-weight: 400;
+    font-family: proxima-nova, sans-serif;
+    letter-spacing: 0.007rem;
+    text-transform: uppercase;
+    display: inline-flex;
+    border: 1px solid rgba(255,255,255,0.8);
+    color: #fff;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    text-decoration: none;
 }
 
-.button .icon{
-    height: 100%;
-    width: 40px;
-    margin-left: 1rem;
+.play-button:hover {
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,1);
+}
+
+.play-button .icon{
+    transition: color 3ms;
+    margin-right: 0.5rem;
+    opacity: 0.8;
+    font-size:1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-left: 1px solid #fff;
 }
 
+.play-button:hover .icon{
+    opacity: 1;
+}
 
 .main-navigation {
-    padding: 1rem 10%;
+    padding: 2rem 10%;
     position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
     top: 0;
     left: 0;
     z-index:1;
@@ -86,9 +115,11 @@ p {
 .banner {
     position:relative;
     width: 100%;
-    height: 100%;
+    height: 80%;
     display:flex;
+    text-align: center;
     align-items: center;
+    justify-content: center;
     padding: 0 10%;
     box-sizing: border-box;
 }
@@ -100,18 +131,33 @@ p {
 }
 
 .banner h1 {
-    text-shadow: 2px 2px 4px rgb(0 0 0 / 45%);
-    font-size: 4.5rem;
+    font-size: 9rem;
+    font-family: balboa, sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: #fff;
+    margin-bottom: 2rem;
 }
 
 .banner .detail {
     position:relative;
     z-index: 1;
-    max-width: 550px;
+
+}
+
+.detail .meta {
+    display: flex;
+    font-family: dharma-gothic-e, sans-serif;
+    font-weight: 300;   
+    font-size: 2rem;
+    opacity: 0.8;
+    font-style: normal;
+    text-transform: uppercase;
+    gap:1rem;
 }
 
 .banner .overlay {
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(117,117,117,0) 7%, rgba(255,255,255,0) 48%, rgba(20,20,20,0) 93%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(117,117,117,0) 7%, rgba(255,255,255,0) 48%, rgba(20,20,20,0) 53%, rgba(0,0,0,1) 100%);
     position: absolute;
     top: 0;
     left: 0;
@@ -131,6 +177,42 @@ p {
     opacity: 0.5;
 }
 
+.container header{
+    padding: 1rem 10%;
+}
+
+.container section{
+    overflow-x: auto;
+}
+
+.case-studies ul {
+    list-style: none;
+    padding: 0;
+    padding: 0 0 0 10%;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.poster {
+    height: 300px;
+    min-width: 170px;
+    flex:1;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255, 0.8);
+    overflow: hidden;
+}
+
+.poster img{
+    height: 100%;
+    width:100%;
+    object-fit: cover;
+}
+
+.poster:last-child {
+    margin-right: 1rem;
+}
+
 @media(max-width: 600px) {
 
     .main-navigation {
@@ -139,12 +221,19 @@ p {
 
     .banner {
         padding: 0 5%;
+        height:50%;
         align-items: flex-end;
         padding-bottom: 3rem;
     }
 
+    .detail .meta {
+        font-size: 1.5rem;
+        justify-content: center;
+    }
+
     .banner h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
     }
 
     .banner p {

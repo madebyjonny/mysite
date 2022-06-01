@@ -26,6 +26,7 @@ export default function App() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/styling/main.css" />
+
         <link rel="stylesheet" href="https://use.typekit.net/wjh4vef.css" />
       </head>
       <body>
