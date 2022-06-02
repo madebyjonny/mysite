@@ -349,7 +349,6 @@ p {
     .banner {
         padding: 0 5%;
         height:50%;
-        align-items: flex-end;
         padding-bottom: 3rem;
     }
 
