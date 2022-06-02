@@ -91,6 +91,29 @@ export default function Index() {
           </ul>
         </section>
       </article>
+      <article className="center">
+        <h2 className="dark">Worked with</h2>
+        <ul className="list-h">
+          <li>
+            <img src="/images/WITLogo.png" />
+          </li>
+          <li>
+            <img src="/images/bfmg.png" />
+          </li>
+          <li>
+            <img src="/images/defiant.png" />
+          </li>
+          <li>
+            <img src="/images/castlegames.png" />
+          </li>
+          <li>
+            <img src="/images/deathorglory.png" />
+          </li>
+        </ul>
+      </article>
+      <footer>
+        <h2>Follow me</h2>
+      </footer>
     </>
   );
 }

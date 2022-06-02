@@ -20,6 +20,10 @@ h1,h2,h3,h4,h5,h6 {
     line-height: 100%;
 }
 
+h2,h3,h4,h5,h6 {
+    letter-spacing: 0.1rem;
+}
+
 h1 {
     font-size: 4rem;
 }
@@ -333,6 +337,31 @@ p {
 
 .play-button-ontainer {
     z-index: 1;
+}
+
+.center {
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dark {
+    color: #777;
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+}
+
+.list-h {
+    padding:0;
+    margin:0;
+    gap: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
 }
 
 @media(max-width: 600px) {
