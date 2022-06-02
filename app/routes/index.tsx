@@ -1,22 +1,26 @@
+import { json } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
+
+const MEDIA_BASE_URL = "https://shark-app-gdi93.ondigitalocean.app";
+
+export const loader = async () => {
+  try {
+    const data = await fetch(
+      "https://shark-app-gdi93.ondigitalocean.app/v1/case-studies?populate=poster"
+    );
+
+    const caseStudies = await data.json();
+
+    return json({ caseStudies: caseStudies.data });
+  } catch (e) {
+    return json({ caseStudies: [] });
+  }
+};
+
 export default function Index() {
-  const caseStudies = [
-    {
-      title: "The Pursuit",
-      logo: "",
-      poster: "/images/posters/pursuit.jpg",
-      slug: "",
-    },
-    { title: "WIT", logo: "", poster: "/images/posters/wit.jpg", slug: "" },
-    {
-      title: "CrossFit Death or Glory",
-      logo: "",
-      poster: "/images/posters/deathorglory.jpg",
-      slug: "",
-    },
-    { title: "Battle for Middle Ground", logo: "", poster: "", slug: "" },
-    { title: "The Defiant Games", logo: "", poster: "", slug: "" },
-    { title: "Castle Games", logo: "", poster: "", slug: "" },
-  ];
+  const { caseStudies } = useLoaderData();
+
+  console.log(caseStudies);
 
   return (
     <>
@@ -54,11 +58,26 @@ export default function Index() {
         </header>
         <section>
           <ul>
-            {caseStudies.map((item) => {
+            {caseStudies.map(({ attributes }) => {
               return (
-                <li className="poster">
-                  <a href={item.slug}>
-                    <img src={item.poster} alt={item.title} />
+                <li
+                  className={`poster ${
+                    attributes.coming_soon ? "coming-soon" : null
+                  }`}
+                >
+                  {attributes.coming_soon ? (
+                    <div className="meta">
+                      <span className="pill">Coming Soon</span>
+                    </div>
+                  ) : null}
+                  <a href={!attributes.coming_soon ? attributes?.slug : null}>
+                    <img
+                      src={`${MEDIA_BASE_URL}${attributes?.poster?.data?.attributes?.formats?.medium?.url}`}
+                      alt={attributes.poster.attributes?.alternativeText}
+                    />
+                    <section className="detail">
+                      <h3>{attributes.title}</h3>
+                    </section>
                   </a>
                 </li>
               );
