@@ -1,8 +1,6 @@
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 
-const MEDIA_BASE_URL = "https://shark-app-gdi93.ondigitalocean.app";
-
 export const loader = async () => {
   try {
     const data = await fetch(
@@ -11,7 +9,7 @@ export const loader = async () => {
 
     const caseStudies = await data.json();
 
-    return json({ caseStudies: caseStudies.data });
+    return json({ caseStudies: caseStudies.data.reverse() });
   } catch (e) {
     return json({ caseStudies: [] });
   }
@@ -70,13 +68,21 @@ export default function Index() {
                       <span className="pill">Coming Soon</span>
                     </div>
                   ) : null}
-                  <a href={!attributes.coming_soon ? attributes?.slug : null}>
+                  <a
+                    href={
+                      !attributes.coming_soon
+                        ? `/case-studies/${attributes?.slug}`
+                        : undefined
+                    }
+                  >
                     <img
-                      src={`${MEDIA_BASE_URL}${attributes?.poster?.data?.attributes?.formats?.medium?.url}`}
+                      src={`${attributes?.poster?.data?.attributes?.formats?.medium?.url}`}
                       alt={attributes.poster.attributes?.alternativeText}
                     />
                     <section className="detail">
-                      <h3>{attributes.title}</h3>
+                      <header>
+                        <h3>{attributes.title}</h3>
+                      </header>
                     </section>
                   </a>
                 </li>

@@ -115,12 +115,18 @@ p {
     position:relative;
     width: 100%;
     height: 80%;
+    flex-direction: column;
     display:flex;
     text-align: center;
     align-items: center;
     justify-content: center;
     padding: 0 10%;
     box-sizing: border-box;
+}
+
+.banner.short {
+    height: 70%;
+    justify-content: space-between;
 }
 
 .banner p {
@@ -141,7 +147,6 @@ p {
 .banner .detail {
     position:relative;
     z-index: 1;
-
 }
 
 .detail .meta {
@@ -155,6 +160,53 @@ p {
     gap:1rem;
 }
 
+
+.banner > header h1 {
+    font-family: dharma-gothic-e, sans-serif;
+    font-weight: 300;   
+    font-size: 3rem;
+    margin: 0;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+.banner > header h2 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.banner > header p {
+    color: #777;
+    line-height: 1.5;
+    font-size: 0.9rem;
+    max-width: 400px;
+}
+
+.banner > header {
+    width: 50%;
+    gap:2rem;
+    display: flex;
+    text-align: left;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 1;
+}
+
+.banner > header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.banner > header li {
+    margin-bottom: 1rem;
+    color: #777;
+}
+
+.banner > header .summary{
+    flex:1;
+}
+
 .banner .overlay {
     background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(117,117,117,0) 7%, rgba(255,255,255,0) 48%, rgba(20,20,20,0) 53%, rgba(0,0,0,1) 100%);
     position: absolute;
@@ -164,7 +216,8 @@ p {
     width: 100%;
 }
 
-.banner .video {
+.banner .video,
+.banner > img {
     position: absolute;
     z-index: 0;
     top:0;
@@ -173,11 +226,24 @@ p {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    object-position: left top;
     opacity: 0.5;
 }
 
-.container header{
+.container header,
+.container .content{
     padding: 1rem 10%;
+}
+
+.container .content{ 
+    color: #777;
+    font-size:0.9rem;
+    line-height: 1.5;
+}
+
+.container header.short,
+.container .content.short{
+    padding: 1rem 30%;
 }
 
 .container section{
@@ -265,7 +331,16 @@ p {
     margin-right: 1rem;
 }
 
+.play-button-ontainer {
+    z-index: 1;
+}
+
 @media(max-width: 600px) {
+
+    .container header.short,
+    .container .content.short{
+        padding: 1rem 10%;
+    }
 
     .main-navigation {
         padding: 1rem 5%;
@@ -276,6 +351,20 @@ p {
         height:50%;
         align-items: flex-end;
         padding-bottom: 3rem;
+    }
+
+    .banner img{
+        object-position: center top;
+    }
+
+    .banner.short {
+        height: 70%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .banner > header {
+        width: 90%;
     }
 
     .detail .meta {
