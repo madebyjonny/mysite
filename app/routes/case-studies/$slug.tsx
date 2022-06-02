@@ -1,7 +1,6 @@
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { marked } from "marked";
-const MEDIA_BASE_URL = "https://shark-app-gdi93.ondigitalocean.app";
 
 export const loader = async ({ params }) => {
   const { slug } = params;
@@ -39,16 +38,13 @@ export default function Index() {
       <section className="banner short">
         <div />
         <img
-          src={`${MEDIA_BASE_URL}${caseStudy.attributes?.banner?.data?.attributes?.formats?.medium?.url}`}
+          src={`${caseStudy.attributes?.banner?.data?.attributes?.formats?.medium?.url}`}
           alt={caseStudy.attributes.poster.attributes?.alternativeText}
         />
         <div className="play-button-ontainer">
-          <a
-            className="play-button"
-            href="https://www.youtube.com/watch?v=AVlcj4t61L4&amp;ab_channel=madebyjonny"
-          >
+          <a className="play-button" href={caseStudy.attributes.media_link}>
             <i className="fa fa-play icon" aria-hidden="true"></i>
-            Watch on YouTube
+            {caseStudy.attributes.media_link_label}
           </a>
         </div>
         <div className="overlay" />
